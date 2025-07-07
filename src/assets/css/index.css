@@ -1,0 +1,227 @@
+:root{
+  --default-color :rgb(13, 95, 45);
+  --nav-color : #f1f1f1;
+  --heading-color : #cecece;
+  --hover-color : rgba(57, 216, 118, 0.699);
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+
+/* Login page */
+.login-block{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-image: url(/src/assets/img/fond.jpg);
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px) brightness(0.96);
+  z-index: 0;
+}
+
+#login-block{
+  background-color: rgba(255, 255, 255, 0.253);
+  backdrop-filter: blur(10px);
+  z-index: 1;
+  border-radius: 15px;
+  box-shadow: 2px 2px 20px rgba(141, 87, 177, 0.342);
+}
+
+#login-block .title-login{
+  color: var(--default-color);
+  text-transform: uppercase;
+}
+
+
+.navigation{
+  position: fixed;
+  width: 250px;
+  height: 100%;
+  background: var(--default-color);
+  border-left: 10px solid var(--default-color);
+  transition: all 0.5s ease;
+  overflow: hidden;
+}
+
+.nav-princ{
+  /* background-color: red; */
+  padding: 0;
+}
+
+.nav-princ .nav-links{
+  color: var(--nav-color);
+  font-size: 1.2em;
+  transition: all .5s ease-in-out;
+  width: 300px;
+}
+
+.active{
+  background-color: rgb(255, 255, 255);
+  width: 300px;
+  color: var(--default-color) !important;
+  margin-left: 3%;
+}
+
+.nav-princ .nav-links:hover{
+  background-color: rgb(255, 255, 255);
+  width: 300px;
+  color: var(--default-color);
+  margin-left: 3%;
+}
+
+.nav-princ .nav-links:hover::before{
+  
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 35px 35px 0 10px var(--width);
+  /* pointer-events: none; */
+}
+
+.nav-princ .nav-links::after{
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 35px -35px 0 10px var(--width);
+  pointer-events: none;
+}
+
+.deconnexion{
+  position: absolute;
+  bottom: 10px;
+}
+
+.navigation.active{
+  width: 103px;
+}
+
+
+#table-default thead th{
+  background-color: var(--default-color);
+  color: #f1f1f1;
+}
+
+
+
+.main{
+  position: absolute;
+  width: calc(100% - 250px);
+  left: 250px;
+  min-width: 100vh;
+  min-height: 100vh;
+  background: var(--width);
+  background-image: url(/src//assets/img/fondWork.jpg);
+  transition: 0.5s ease;
+}
+
+
+.img-casier{
+  width: 200px;
+}
+
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="search"],
+input[type="date"],
+input[type="file"],
+textarea,
+form select
+{
+  background-color: #ffffffb4;
+  /* border-bottom: 0.2px solid var(--hover-color); */
+}
+
+input[type="text"]:hover,
+input[type="password"]:hover,
+input[type="email"]:hover,
+input[type="tel"]:hover,
+input[type="number"]:hover,
+input[type="search"]:hover,
+input[type="date"]:hover,
+input[type="file"]:hover,
+textarea,
+form select:hover
+{
+  border: 1px solid var(--hover-color);
+  outline: var(--accent-color);
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="date"]:focus,
+input[type="file"]:focus,
+textarea,
+form select:focus
+{
+  border: 1px solid var(--hover-color);
+  outline: var(--accent-color);
+}
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder,
+input[type="email"]::placeholder,
+input[type="tel"]::placeholder,
+input[type="number"]::placeholder,
+input[type="search"]::placeholder,
+textarea
+{
+  color: #777777d8;
+  font-family: var(--default-font);
+}
+
+input[type="checkbox"],
+input[type="radio"]
+{
+  appearance: none;
+  border: 1.2px solid var(--accent-color);
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked,
+input[type="radio"]:checked
+{
+  background-color: var(--default-color);
+  border-color: #979797;
+}
+
+.fade-in-box{
+  opacity: 0;
+  animation: fadeIn 1.4s ease-in forwards;
+}
+@keyframes fadeIn{
+  to{
+    opacity: 1;
+  }
+}
